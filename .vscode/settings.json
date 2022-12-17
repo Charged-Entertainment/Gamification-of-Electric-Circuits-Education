@@ -1,4 +1,5 @@
 {
+    "editor.wordWrap": "on",
     "files.exclude": {
         "templates/build": true,
         "samples/build": true,
