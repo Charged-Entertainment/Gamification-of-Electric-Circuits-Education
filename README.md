@@ -7,7 +7,7 @@ data-sheets, and circuit schematics designed to encourage real-life experimentat
 and allow for academic instructors and supervisors to supplement their coursework
 and practical assignments with select (or all) sections of the game. Submitted as a graduation project's book for a BSc. Computer Science @ MUST University 2022/2023.
 ***
-![demo image](images/demo/level1.png)
+![demo image](book/images/demo/level1.png)
 ***
 ## Team Members
 | Name        | ID           |
