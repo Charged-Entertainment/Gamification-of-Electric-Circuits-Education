@@ -1,0 +1,103 @@
+%\documentclass[openany]{book}
+\documentclass{book}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage[a4paper,top=2.54cm,bottom=3.81 cm,left=4cm,right=2cm,marginparwidth=1.75cm ]{geometry}
+\usepackage{fancyhdr}
+\graphicspath{{images/}}
+\usepackage[english]{babel}
+\usepackage{svg}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage[labelfont=bf]{caption}
+\captionsetup[table]{singlelinecheck=false}
+\usepackage{subcaption}
+\usepackage[section]{placeins}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\usepackage{subfiles} 
+\usepackage{tabularx}
+\usepackage{csquotes}
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+
+\usepackage[
+backend=biber, style=numeric, sorting=none
+%https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX#Reference_guide
+]{biblatex}
+\addbibresource{refs.bib}
+
+\usepackage{hyperref}
+
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{%
+  \clearpage
+  {\pagestyle{empty}\origdoublepage}%
+}
+
+\titleformat{\chapter}[display]
+    {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0cm}{-1.19cm}{0cm}
+
+
+\usepackage[acronym]{glossaries}
+
+\makeglossaries
+
+\newacronym{2d}{2D}{Two-dimensional} 
+\newacronym{3d}{3D}{Three-dimensional}
+\newacronym{stem}{STEM}{Science, technology, engineering, and mathematics}
+\newacronym{sldc}{SDLC}{Software development life cycle} 
+\newacronym{gldc}{GDLC}{Game development life cycle}
+\newacronym{gdd}{GDD}{Game design document} 
+\newacronym{vfx}{VFX}{Visual effects}
+\newacronym{sfx}{SFX}{Sound effects}
+\newacronym{led}{LED}{Light-emitting diode}
+\newacronym{gui}{GUI}{Graphical user interface}
+\newacronym{qa}{QA}{Quality assurance}
+\newacronym{xp}{XP}{Experience points}
+
+
+
+\begin{document}
+\let\cleardoublepage\clearemptydoublepage
+%\pagenumbering{Roman}
+\frontmatter
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0 pt}
+\cfoot{2022-2023}\subfile{components/cover}
+
+\subfile{components/abstract}
+
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{37.86539pt}
+\setlength{\footskip}{1.27cm}
+\lhead{\nouppercase{\rightmark}}
+\chead{\includegraphics[width=0.08\columnwidth]{CollegeLogo.jpeg}}
+\rhead{\nouppercase{\leftmark}}
+\cfoot{}
+\rfoot{\thepage}
+\lfoot{ Gamification of Electric Circuits Education }
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\printglossary[type=\acronymtype]
+\mainmatter
+%\pagenumbering{arabic}
+\subfile{components/chapter1}
+\subfile{components/chapter2}
+\subfile{components/chapter3}
+
+\addcontentsline{toc}{section}{References}
+\printbibliography [title={References}]
+
+\end{document}
