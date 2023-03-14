@@ -13,7 +13,6 @@ jobs:
           working_directory: book
       # list all the files you want to upload as artifacts
       - name: List files
-        run: ls -l book
         run: ls -l .
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
