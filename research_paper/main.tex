@@ -5,6 +5,7 @@ cm,left=3cm,right=3cm,marginparwidth=1.75cm ]{geometry}
 \usepackage{multicol}
 \usepackage{ragged2e}
 \setlength{\columnsep}{1cm}
+\usepackage[labelfont=bf]{caption}
 \usepackage{fancyhdr}\fancyhf{}
 \lhead{}
 \rhead{\thepage}
@@ -13,9 +14,17 @@ cm,left=3cm,right=3cm,marginparwidth=1.75cm ]{geometry}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{lipsum}
+\usepackage[
+backend=biber, style=numeric, sorting=none
+]{biblatex}
+\addbibresource{./refs.bib}
+\usepackage{lmodern}
+
+\usepackage{hyperref} 
+
 \title{Gamification of Electric
  Circuits Education}
-\author{Nour Gaser , Hazem Gamal , Rokaia Medhat  }
+\author{Nour Gaser , Hazem Gamal , Rokaia Medhat, Mohammed Hussein  }
 
 \date{December 2022}
 
@@ -56,12 +65,12 @@ In the current academic and research scene, the topics of embedded systems and r
 
 Most students regardless of their scientific level often find the idea of learning about circuits a very intimidating one,it is a topic often associated with the idea of being difficult. And that applies to both the theoretical side and the practical side of the learning process, it is a demanding topic that requires the student to have an understanding in multiple fields such as mathematics and physics . 
 
-Students from all levels may find difficulties in understanding topics such as voltage, current, and how these properties are affected by different components in a circuit. This can be seen for example in the research administered by Carol Bowman and Gordon J. Aubrecht, II [1], they found that students find the concept of voltage very confusing, and that is due to the fact that students first start by learning about current, then when they start learning about voltage they apply the idea of flow which applies to current, as a result students start confusing the two concepts together, and that it is despite careful texts which attempt to clarify the difference among the two.
+Students from all levels may find difficulties in understanding topics such as voltage, current, and how these properties are affected by different components in a circuit. This can be seen for example in the research administered by Carol Bowman and Gordon J. Aubrecht, II \cite{1}, they found that students find the concept of voltage very confusing, and that is due to the fact that students first start by learning about current, then when they start learning about voltage they apply the idea of flow which applies to current, as a result students start confusing the two concepts together, and that it is despite careful texts which attempt to clarify the difference among the two.
 
-Another challenge that students face nowadays is their very short attention spans. Students need something engaging and entertaining to keep them interested, traditional methods such as long lectures, and large textbooks, while informative, but they lack the attention grabbing element, students get bored and lose interest. According to Neil A. Bradbury [17] several institutions have brought down the length of lectures to only 15 minutes. This is based on the belief that a lecture any longer than 15 minutes is not going to be effective for students.
+Another challenge that students face nowadays is their very short attention spans. Students need something engaging and entertaining to keep them interested, traditional methods such as long lectures, and large textbooks, while informative, but they lack the attention grabbing element, students get bored and lose interest. According to Neil A. Bradbury \cite{17} several institutions have brought down the length of lectures to only 15 minutes. This is based on the belief that a lecture any longer than 15 minutes is not going to be effective for students.
 \vfill
 \section{Gamification as an approach}
-There have been a lot of different definitions for gamification with different perspectives from different authors. Dixon, Khaled, and Nacke suggested defining “gamification” as “the use of game design elements in non-game contexts”. van Grove(2011) [2] ”Gamification is to change something that is not a game through a game or its elements.”. MacMillan (2011) [3] ” Gamification, defined as the use of game mechanics, dynamics, and frameworks to promote desired behaviors”. So we could simply say that gamification is the systematic process of applying game mechanics to non-game contexts to make difficult tasks more enjoyable. 
+There have been a lot of different definitions for gamification with different perspectives from different authors. Dixon, Khaled, and Nacke suggested defining “gamification” as “the use of game design elements in non-game contexts”. van Grove(2011) \cite{2} ”Gamification is to change something that is not a game through a game or its elements.”. MacMillan (2011) \cite{3} ” Gamification, defined as the use of game mechanics, dynamics, and frameworks to promote desired behaviors”. So we could simply say that gamification is the systematic process of applying game mechanics to non-game contexts to make difficult tasks more enjoyable. 
 
 Gamification aims to make an otherwise dull experience tolerable, if not desirable. Good game design must be practiced, otherwise either the essence of the topic will be lost (preserve the essence of the topic), or the experience will just be dull, or even leaving a negative impression on the topic.
 
@@ -70,20 +79,68 @@ Gamification aims to make an otherwise dull experience tolerable, if not desirab
 Our proposed solution is to develop an educational puzzle game, whose player can both enjoy an entertaining experience regardless of their scientific interest level, all the while implicitly gaining valuable experience and knowledge in electric circuits design, where they can opt-in for a more academic learning experience through references to external materials, data-sheets, and circuit schematics designed to encourage real-life experimentation, and allow for academic instructors and supervisors to supplement their coursework and practical assignments with select (or all) sections of the game.
 \section{Preliminary study}
 \subsection{Literature review}
-\lipsum[0-1]
-\subsection{Case studies}
-\lipsum[0-1]
+In order to determine whether our solution would be useful or not, as well as how to approach it, we neet to review previous attempts at gamifying the educational experience. Therefore, we conducted a literature review of most of the current relevant works. The summary of that is as follows: \\
+\begin{itemize}
+    \item an experiment done on a sample of 294 students registered in the first year and first semester in an electrotechnical engineering course shows that traditionally, in math classes, the attendance
+    is low specially in first year but in the classes where gamification was used, attendance saw a considerable increase in both theoretical and practical classes and the rate of students who dropped out was lower than
+    the previous years. \cite{26}
+    \item According to statistics represented by Educational Evaluation National Institution (EENI), 22.8\% of the students form the Andean region and 18.3\% from the coast have insufficient grades in areas that include the study of science (Physics, Chemistry and Biology). From this point
+    this study proposes a solution by developing a physical mobile application that implements the methodologies of gamification and increased reality with the intention of improving creativity and
+    academic performance of the students. \cite{27}
+    \item a study was conducted on 43 students in secondary vocational engineering. There were two conditions, the traditional
+    learning condition, and a virtual lab one. The post-test results show that the virtual-lab condition students obtained significantly higher overall
+    scores, than the participants in the traditional condition. Virtual-lab students also scored higher on the conceptual items. \cite{25}
+    \item A study for comparing the effectiveness of a computer simulation
+    and a hands-on activity on learning electric circuits showes that incorporating any form of interactive learning can be beneficial
+    and will increase the quality of the students’ learning experience, regardless of whether it is a hands-on experience or a computer simulated one. \cite{24}
+\end{itemize}
+\textbf{For the full literature review see \cite{29} section 2.1.}
 \subsection{Survey}
-\lipsum[0-1]
+We also conducted a survey in order to see whether our solution would be helpful to students, as well as to exactly determine the challeneges that they face during their studies. The next few figures show the students' responses to the following questions:
+\begin{itemize}
+    \item How would you rate the difficulty of your electric circuit-related courses?
+    \item Please describe any challenges that faced you while circuit simulation software.
+    \item Would you be interested if there was a puzzle video game that attempts to simplify electric circuit education (including simulation) and make it entertaining? 
+\end{itemize} 
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{Screenshot from 2022-12-17 10-10-45.png}
+    \captionof{figure}{ Rating the difficulty of electric circuits related cources through academic programs} 
+\end{center}
+
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{Screenshot from 2022-12-17 10-11-29.png}
+    \captionof{figure}{The students interest in applying a gamification solution } 
+\end{center}
+
+\raggedright\textbf{Challenges that faced the students when using circuit simulation software}
+\begin{itemize}
+    \item The user interfaces are hard to deal with.
+    \item Sometimes there are too many options and the students don't know exactly which type of component is the one they are looking for.
+    \item Configuring and running simulations.
+    \item "The guidelines of using the app wasn't specific and in some applications such as Proteus the usage of the application wasn't logical for me". 
+    \item "They werent very realistic, I had challenges while using them they weren't that simple to use, or even to get it, the accuracy wasn't high, it lagging some time, and performance was too low."
+\end{itemize}
+
+\textbf{For the full survey see \cite{28}.}
+
 \section{Methodology}
-\lipsum[0-1]
-\section{Results}
-\lipsum[0-1]
+
+The game will run on the unity game engine utilising a lot of its features. As for the simulation of the circuits the we will use the C\# library SpiceSharp. SpiceSharp is a circuits simulation library that is compatible with the Berkeley Spice simulator. The player will interact with the game through its user interface, those interactions could be navigational interactions to transition from one menu or scene to another, or they could be gameplay interactions when playing a level. Then in order to complete a level the player needs to achieve some goals that are introduced at the beginning of the level. The circuits submitted by the player is then simulated using SpiceSharp and the results are sent back to the game, the game then decides whether the goals were achieved or not.
+
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{System Design & Architecture.png}
+    \captionof{figure}{System Architecture} 
+\end{center}
+    
+\section{Results} 
+ \hfill \break
+To be continued through out the Seminar 3 \& 4
+ \hfill \break
 \section{Conclusion}
-\lipsum[0-1]
+\hfill \break
+To be continued through out the Seminar 3 \& 4
+ \hfill \break
 \section{Refrences}
-\lipsum[0-1]
+\printbibliography
 \end{multicols}
-
-
 \end{document}
