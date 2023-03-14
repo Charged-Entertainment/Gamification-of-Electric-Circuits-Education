@@ -11,9 +11,6 @@ jobs:
         with:
           root_file: main.tex
           working_directory: book
-      # list all the files you want to upload as artifacts
-      - name: List files
-        run: ls -al book/
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
