@@ -1,0 +1,192 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+
+\chapter{Proposed System}
+\section{Methodologies}
+\subsection{Software development life cycle (SDLC)}
+\acrfull{sldc} is the process followed by developers when they are building a product. It consists of several phases, and each one is essential to the process of creating a high quality software. The life cycle describes the methodology the team follows in the overall development process. 
+\subsubsection*{\underline{Stage 1: planning and requirement analysis
+}}
+This stage is the cornerstone for the whole process of building a software. In this stage, the planning for the system is done by the heads of the team, to define the project scope, set the goals and objectives of the system, and determine the risk associated with the project. The information collected is then used to plan the project approach. 
+\subsubsection*{\underline{Stage 2: defining requirements
+}} 
+Once the first stage is done, a system analysis is conducted to determine and document the requirements of the system and get them approved by the stakeholders. Also, we will analyze the requirements to determine the characteristics of the system. 
+\subsubsection*{\underline{Stage 3: designing the product architecture 
+}} 
+Based on the requirement specification, we will design the system architecture for the development process. Usually, more than one design is proposed and shown to the stakeholders to agree on which is the best one for the product. 
+\subsubsection*{\underline{Stage 4: development
+}}  
+In this stage of the SDLC, the actual programming of the systems begins, based on the system architecture designed in the previous stage. The programmers should be able to develop the system without much hassle if the previous stages of development are done correctly. 
+\subsubsection*{\underline{Stage 5: Testing
+}} 
+After the development is done, the system gets tested for bugs and errors, although testing is done simultaneously with every stage of the SDLC, in this stage the system is tested as a whole the reported bugs get fixed and re-tested.
+\subsubsection*{\underline{Stage 6: Deployment 
+}} 
+Once the system is tested and ready to be published, it gets released in the market, sometimes a product will be deployed in stages and sometimes as a whole. After the deployment of the system and the users feedback, the product may receive updates to enhance the performance or fix any bugs found by the users. 
+
+Although games are basically software, the SDLC is not suitable for game development, so we will follow \acrfull{gldc} in the making of this project. Which is more suited for game development. Also following methodologies like the waterfall model. 
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.3]{images/chapter3/SDLC.png}
+\caption{Software Development Life Cycle (SDLC)}
+\label{sdlc}
+\end{figure}
+\newpage
+\subsection{Game development stages and the game development life cycle (GDLC)}
+Video games are in their essence software; depending on the scale of the game, project management and orchestration play a fundamental role in development. Games with poor project management are more likely to run over budget and time estimates, as well as contain a large number of bugs. However, unlike other kinds of software, games are not suitable for the typical software development life cycle (SDLC), but rather follow agile-like methodologies modified to suit the game development life cycle (GDLC), which goes roughly as follows for most games:
+\subsubsection*{\underline{Pre-production stage}}
+Also known as the planning phase (or both, combined into one stage), this is when the game’s initial and basic properties are specified. It is intended as a feasibility study of the game idea, followed by prototypes and documents, which can later be presented as proof-of-concept. This stage is mainly focused on idea and concept development, as well as documentation. Its goals are typically some or all of the following:
+\begin{itemize}
+    \item Develop and document game concepts, ideas, mechanics.
+    \item Produce game descriptions and concept art.
+    \item Write a proposal document if the game is to be sold to a publisher.
+    \item Write a concept document, including comprehensive information such as:  the game's genre, gameplay description, features, setting, story, target audience, hardware platforms, estimated schedule, marketing analysis, team requirements, and risk analysis.
+    \item Write a \acrfull{gdd} , a document which describes the game’s concept and major gameplay elements in detail. It may include concept art for the game, story plot, theme and colors, initial level design sketches, and may even be accompanied by a functional prototype for some of the game mechanics. This document is a living document, that is, the first version is produced in the pre-production stage, then the document is updated on weekly or even daily-basis during the production stage.
+    \item Produce quick functional prototypes for select game mechanics.
+\end{itemize}
+\subsubsection*{\underline{Production stage}}
+This is where the majority of the game’s development time, effort, and budget is spent. The entire development team is involved in this stage; artists, engineers, designers, musicians, writers, and many other talents will collaborate to bring the game together. This stage can take anywhere from a few months or less, to 10 or more years, depending on the scale of the game.
+\subsubsection*{\underline{Testing stage}}
+This stage most of the time does not fall in linear progression relative to the GDLC, but rather segments of the game go back and forth between production and testing. Test types vary and there are several game tester roles, varying from bug testing and stress testing, to gameplay, balance, and fun-factor testing. Several milestone releases of the game can go public during the production-testing cycle; alpha and beta versions of the game may go to public testing before the game moves to the next stage.
+
+\subsubsection*{\underline{Launch stage}}
+At this point, the game has been full-developed and tested, and is ready for the official launch. This stage is typically accompanied by game polishing, bug fixes, advertising and creating launch trailers and other publishing media, readying the game for launch and distribution.
+
+\subsubsection*{\underline{Post-production stage}}
+This stage involves bug fixes, game patches (balancing, minor content updates, etc…), and new content additions. New content might start off an entire new GDLC if it's large enough.
+
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.3]{images/chapter1/Example game development life cycle.png}
+\caption{Example game development life cycle (GDLC) from G2}
+\label{fig:Example game development life cycle (GDLC)}
+\end{figure}
+This stage involves bug fixes, game patches (balancing, minor content updates, etc…), and new content additions. New content might start off an entire new GDLC if it's large enough.
+That all being said, an insightful research literature review (Aleem et al., 2016) \cite{11} also shows that despite the fact that a proper GDLC will help a game organization identify its strengths and weaknesses and provide guidance for improvement, the domain is still fragmented and lacks standard good practices relative to its typical SDLC counterpart. 
+\newpage
+
+\subsection{Design patterns}
+We utilize many \acrshort{oop} design patterns in order to keep our code clean, reusable ('dry'), and performant. Some of the utalized design patterns \cite{32}:
+
+\begin{itemize}
+    \item \textbf{Singleton}: we use this design pattern for some code modules of the game, where we need to insure that only one single instance of a certain class at a given point. This is utilized in almost all of the system modules, where their public APIs (methods) are exposed through a singleton object instance.
+    \item \textbf{State}: a design pattern heavily inspired by finite-state-machines, where at any given moment, the actions that fire through a given signal depend on the state of the object. For example: if the player tries to drag a component, the system's response is different based on whether the game is in simulation state, or edit state, or evaluation state.
+    \item \textbf{Command}: used to implement the game's action undo system. Each user action is represented through a class which inherits from the base Command class, and must implement the Undoable interface.
+\end{itemize}
+
+\section{Core system modules}
+The core of the game (the puzzle scene), where the player will spend most of their time, consists of what we define as "Core System Modules". Each module consists of the following parts:
+\begin{itemize}
+    \item \textbf{Controller}: responsible for collecting user input from the user, within the context of this module only. 
+    \item \textbf{API}: exposes static public methods (accessed through the singleton instance) for other systems (or user input) to call upon when needed.
+    \item \textbf{Driver}: the main private implementation of the systems logic. 
+\end{itemize}
+
+\subsection{Camera}
+Control, maintain, and animate the game's camera. Includes the following features:
+\begin{itemize}
+    \item \textbf{Pan}: translate the camera allowing the player to access a larger area than the one currently being shown.
+    \item \textbf{Zoom}: zoom-in and zoom-out (gradually, in an animated way using lerping techniques)
+\end{itemize}
+\subsubsection*{API}
+\begin{itemize}
+    \item \textbf{Camera.Zoom(v = 0.5f)}: lerp zoom with the value \(v\). Pass a negative value to zoom out.
+    \item \textbf{Camera.ZoomIn()}: lerp zoom in with a default pre-set standard value.
+    \item \textbf{Camera.ZoomOut()}: lerp zoom our with a default pre-set standard value.
+    \item \textbf{Clipboard.Pan(position, isOffset = true)}: offset the current position by the given value. If \(isOffset\) is false, set the position to directly to the given value instead.
+\end{itemize}
+
+
+\subsection{Clipboard}
+Allows for typical clipboard features when interacting with electric circuit components: such as \textbf{Copy}, \textbf{Cut}, and \textbf{Paste}. 
+\subsubsection*{API}
+\begin{itemize}
+    \item \textbf{Clipboard.Copy()}: add the current selection to the clipboard.
+    \item \textbf{Clipboard.Paste()}: add the current selection to the clipboard.
+    \item \textbf{Clipboard.Cut()}: add the current selection to the clipboard, and delete it from the editor.
+\end{itemize}
+
+\subsection{Component}
+This is the system responsible for the creation, manipulation, and event exchange of all components in the game. Components have 3 forms in the game:
+
+\subsubsection{Component different forms}
+\begin{itemize}
+    \item \textbf{RealComponent}: a static form of a real electric circuit component, retrieved at rumtime from the database for use in the two other forms.
+    \item \textbf{LevelComponent}: a mapping between a RealComponent and its level representation. This holds a reference to the RealComponent, in addition to a local name, and a quantity available for use in the puzzle.
+    \item \textbf{LiveComponent}: the actual instance used by the player in the editor. Holds a reference to its LevelComponent in addition to instance property values from the RealComponent for hideration by the simulator.
+    \item \textbf{CircuitComponent}: collected through a transform into SpiceSharp.Component from the LiveComponent and passed directly to SpiceSharp for simulation. 
+\end{itemize}
+
+\subsubsection*{API}
+\begin{itemize}
+    \item \textbf{Component.Create(name, qty, RealComponent)}: create a LevelComponent to be used in the puzzle. 
+    \item \textbf{Component.Instantiate(LevelComponent)}: create a live instance of a LevelComponent. 
+    \item \textbf{Component.Destroy(LiveComponent)}
+\end{itemize}
+
+\subsection{EditorBehviour}
+Used by any object which needs typical editor behaviours such as translation, rotation, flipping, etc\dots
+\subsubsection*{API}
+\begin{itemize}
+    \item \textbf{EditorBehviour.Move(value, isOffset)}
+    \item \textbf{EditorBehviour.Rotate(angle, isOffset)}
+    \item \textbf{EditorBehviour.FlipH()}: flip horizontally.
+    \item \textbf{EditorBehviour.FlipV()}: flip vertically.
+    \item \textbf{EditorBehviour.Disable()}
+    \item \textbf{EditorBehviour.Enable()}
+    \item \textbf{EditorBehviour.GetBounds()}: return the world bounds of the object's sprite.
+\end{itemize}
+
+\subsection{Goal}
+Allow other systems to trigger goals events and check goals states like GoalAchieved, GoalFailed, etc\dots
+\subsection{Selection}
+Allow selection of EditorBehviours to operate on multiples of them at the same time.
+\subsubsection*{API}
+\begin{itemize}
+    \item \textbf{Add(EditorBehviour)}
+    \item \textbf{Add(EditorBehviour[])}
+    \item \textbf{Remove(EditorBehviour)}
+    \item \textbf{Remove(EditorBehviour[])}
+    \item \textbf{Clear()}
+    
+\end{itemize}
+\subsection{Simulation}
+Collect LiveComponents and manage interactions with SpiceSharp.
+\subsubsection*{API}
+\begin{itemize}
+    \item \textbf{Simulate()}: collects the current circuit from the Circuit system module, proceeds with the simulation, then emits the results.
+\end{itemize}
+\subsection{Miscellaneous}
+There are other smaller system modules also in place, with more being developed when needed. Some of these modules:
+\begin{itemize}
+    \item \textbf{Cursor}: manages changing the cursor sprite based on the game state.
+    \item \textbf{Circuit}: manages maintaining a circuit graph structure during edit mode. 
+    \item \textbf{ContextMenu}: handles context menus shown when EditorBehviours are right-clicked; allows for a graphical way to interact instead of keyboard shortcuts.
+    \item \textbf{Devices}: manage devices (multimeter, calculator, oscilloscope, and power supply).
+    \item \textbf{FeedbackTermina}: manage the unix-shell-like terminal which displays logs and notifications to help the player.
+    \item \textbf{Puzzle}: manage the puzzle state. Holds references to the list of available LiveComponents, Goals, etc...
+    \item \textbf{Wiring}: manage drawing wires between connected LiveComponent terminals.
+\end{itemize}
+
+\section{Tools used}
+\subsubsection{Frameworks:}
+\begin{itemize}
+    \item \underline{.NET framework:} .Net Framework is a software development platform for building and running Windows applications. The .Net framework consists of developer tools, programming languages, and libraries to build desktop and web applications. It is also used to build websites, web services, and games. 
+\end{itemize}
+
+\subsubsection{Tools:} 
+\begin{itemize}
+    \item \underline{Unity:} Unity is a cross-platform game engine developed by Unity Technologies used to build games. Unity provides game developers with a \acrshort{2d} and  \acrshort{3d} platform to create video games.
+    \item \underline{SpiceSharp:} Circuit simulator used to simulate the results of each circuit in the levels. 
+     \item \underline{Figma:} Used for designing the game UI and art.
+      \item \underline{Git:} Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+      \item \underline{IDEs:} Visual Studio Code with various plugins.
+\end{itemize}
+
+
+
+\end{document}
