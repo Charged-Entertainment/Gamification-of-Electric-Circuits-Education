@@ -9,13 +9,20 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
-      - name: Compile LaTeX document
+      - name: Compile book
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
           working_directory: book
-      - name: Upload PDF file
+      - name: Compile paper
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          working_directory: research_paper
+      - name: Collect PDFs
         uses: actions/upload-artifact@v3
         with:
-          name: PDF
-          path: book/main.pdf
+          name: Book
+          path: |
+            book/main.pdf
+            research_paper/main.pdf
