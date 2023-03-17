@@ -76,12 +76,12 @@ Gamification aims to make an otherwise dull experience tolerable, if not desirab
 
 \section{Our proposed solution}
 
-Our proposed solution is to develop an educational puzzle game, whose player can both enjoy an entertaining experience regardless of their scientific interest level, all the while implicitly gaining valuable experience and knowledge in electric circuits design, where they can opt-in for a more academic learning experience through references to external materials, data-sheets, and circuit schematics designed to encourage real-life experimentation, and allow for academic instructors and supervisors to supplement their coursework and practical assignments with select (or all) sections of the game.
+Our proposed solution is to develop an educational puzzle game, whose player can both enjoy an entertaining experience regardless of their scientific interest level, all the while implicitly gaining valuable experience and knowledge in electric circuits design, where they can opt in for a more academic learning experience through references to external materials, data-sheets, and circuit schematics designed to encourage real-life experimentation, and allow for academic instructors and supervisors to supplement their coursework and practical assignments with select (or all) sections of the game.
 \section{Preliminary study}
 \subsection{Literature review}
-In order to determine whether our solution would be useful or not, as well as how to approach it, we neet to review previous attempts at gamifying the educational experience. Therefore, we conducted a literature review of most of the current relevant works. The summary of that is as follows: \\
+In order to determine whether our solution would be useful or not, as well as how to approach it, we need to review previous attempts at gamifying the educational experience. Therefore, we conducted a literature review of most of the current relevant works. The summary of that is as follows: \\
 \begin{itemize}
-    \item an experiment done on a sample of 294 students registered in the first year and first semester in an electrotechnical engineering course shows that traditionally, in math classes, the attendance
+    \item an experiment done on a sample of 294 students registered in the first year and first semester in an electromechanical engineering course shows that traditionally, in math classes, the attendance
     is low specially in first year but in the classes where gamification was used, attendance saw a considerable increase in both theoretical and practical classes and the rate of students who dropped out was lower than
     the previous years. \cite{26}
     \item According to statistics represented by Educational Evaluation National Institution (EENI), 22.8\% of the students form the Andean region and 18.3\% from the coast have insufficient grades in areas that include the study of science (Physics, Chemistry and Biology). From this point
@@ -91,12 +91,12 @@ In order to determine whether our solution would be useful or not, as well as ho
     learning condition, and a virtual lab one. The post-test results show that the virtual-lab condition students obtained significantly higher overall
     scores, than the participants in the traditional condition. Virtual-lab students also scored higher on the conceptual items. \cite{25}
     \item A study for comparing the effectiveness of a computer simulation
-    and a hands-on activity on learning electric circuits showes that incorporating any form of interactive learning can be beneficial
+    and a hands-on activity on learning electric circuits shows that incorporating any form of interactive learning can be beneficial
     and will increase the quality of the students’ learning experience, regardless of whether it is a hands-on experience or a computer simulated one. \cite{24}
 \end{itemize}
 \textbf{For the full literature review see \cite{29} section 2.1.}
 \subsection{Survey}
-We also conducted a survey in order to see whether our solution would be helpful to students, as well as to exactly determine the challeneges that they face during their studies. The next few figures show the students' responses to the following questions:
+We also conducted a survey in order to see whether our solution would be helpful to students, as well as to exactly determine the challenges that they face during their studies. The next few figures show the students' responses to the following questions:
 \begin{itemize}
     \item How would you rate the difficulty of your electric circuit-related courses?
     \item Please describe any challenges that faced you while circuit simulation software.
@@ -104,7 +104,7 @@ We also conducted a survey in order to see whether our solution would be helpful
 \end{itemize} 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{Screenshot from 2022-12-17 10-10-45.png}
-    \captionof{figure}{ Rating the difficulty of electric circuits related cources through academic programs} 
+    \captionof{figure}{ Rating the difficulty of electric circuits related sources through academic programs} 
 \end{center}
 
 \begin{center}
@@ -125,7 +125,7 @@ We also conducted a survey in order to see whether our solution would be helpful
 
 \section{Methodology}
 
-The game will run on the unity game engine utilising a lot of its features. As for the simulation of the circuits the we will use the C\# library SpiceSharp. SpiceSharp is a circuits simulation library that is compatible with the Berkeley Spice simulator. The player will interact with the game through its user interface, those interactions could be navigational interactions to transition from one menu or scene to another, or they could be gameplay interactions when playing a level. Then in order to complete a level the player needs to achieve some goals that are introduced at the beginning of the level. The circuits submitted by the player is then simulated using SpiceSharp and the results are sent back to the game, the game then decides whether the goals were achieved or not.
+The game will run on the unity game engine utilizing a lot of its features. As for the simulation of the circuits we will use the C\# library SpiceSharp. SpiceSharp is a circuits simulation library that is compatible with the Berkeley Spice simulator. The player will interact with the game through its user interface, those interactions could be navigational interactions to transition from one menu or scene to another, or they could be gameplay interactions when playing a level. Then in order to complete a level the player needs to achieve some goals that are introduced at the beginning of the level. The circuits submitted by the player is then simulated using SpiceSharp and the results are sent back to the game, the game then decides whether the goals were achieved or not.
 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{System Design & Architecture.png}
@@ -150,12 +150,11 @@ A 2D puzzle game consisting of the following elements, with each element's tradi
 \end{center}
 
 
-\subsection{Follow up with surver-takers who agreed to test the game (closed-testing and public testing)}
+\subsection{Follow up with survey-takers who agreed to test the game (closed-testing and public testing)}
  \textbf{Closed-testing currently ongoing, with public-testing planned soon}. \lipsum*[3]
 
  \section{Conclusion}
 \textbf{Will be based on the results from the two testing phases}. \lipsum*[3]
-\section{Refrences}
 \printbibliography
 \end{multicols}
 \end{document}
