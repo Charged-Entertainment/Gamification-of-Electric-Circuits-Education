@@ -9,18 +9,15 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
-      
-      - name: Compile book
+
+      - name: Compile book and paper
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
-          working_directory: book
-      
-      - name: Compile paper
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: main.tex
-          working_directory: research_paper
+          pre_compile: cp .latexmkrc $HOME/.latexmkrc
+          work_in_root_file_dir: true
+          root_file: |
+            book/main.tex
+            research_paper/main.tex
       
       - name: Collect PDFs
         uses: actions/upload-artifact@v3
